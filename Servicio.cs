@@ -68,7 +68,7 @@ namespace ProyectoLavanderia
 			get { return detergentePremium; }
 			set { detergentePremium = value; }
 		}
-		public Servicio(string nombre, string telefono, int numeroOrden, int cantidad, string tipoRopa, bool planchado, bool detergentePremium)
+		public Servicio(int numeroOrden, int cantidad, string tipoRopa, bool planchado, bool detergentePremium)
 		{
 			this.NumeroOrden = numeroOrden;
 			this.Cantidad = cantidad;
