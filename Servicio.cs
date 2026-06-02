@@ -79,15 +79,15 @@ namespace ProyectoLavanderia
 		public double TotalEstudianteDescuento(bool esEstudiante)
 		{
 			double totalDescuento = 15;
-			if (cantidad > 10)
+			if (Cantidad > 10)
 			{
-				totalDescuento = totalDescuento + ((cantidad - 10) * 1.50);
+				totalDescuento = totalDescuento + ((Cantidad - 10) * 1.50);
 			}
-			if (planchado == true)
+			if (Planchado == true)
 			{
                 totalDescuento += 5;
 			}
-			if(detergentePremium == true)
+			if(DetergentePremium == true)
 			{
                 totalDescuento += 3;
             }
@@ -100,15 +100,15 @@ namespace ProyectoLavanderia
 		public double CalcularTotal()
 		{
 			double total = 15;
-			if (cantidad > 10)
+			if (Cantidad > 10)
 			{
-				total += (cantidad - 10) * 1.50;
+				total += (Cantidad - 10) * 1.50;
             }
-			if(planchado == true)
+			if(Planchado == true)
 			{
 				total += 5;
 			}
-			if(detergentePremium == true)
+			if(DetergentePremium == true)
 			{
 				total += 3;
 			}
