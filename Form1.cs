@@ -149,5 +149,20 @@ namespace ProyectoLavanderia
                 dgvMaquinas.Refresh();
             }
         }
+
+        private void btnCierreCaja_Click(object sender, EventArgs e)
+        {
+            lblTotalVentas.Text = "Total Ventas del Día: Q" + totalVentasDia.ToString("F2");
+            lblTotalDescuentos.Text = "Total Descuentos del Día: Q" + totalDescunetosDia.ToString("F2");
+        }
+        private void btnGuardarResumen_Click(object sender, EventArgs e)
+        {
+            string resumen = "\t==Resumen del Día:"+Environment.NewLine+
+                "\nTotal vendido en el día: Q" + totalVentasDia.ToString("F2") + Environment.NewLine +
+                "\nTotal de descauntos en el día: Q" + totalDescunetosDia.ToString("F2") + Environment.NewLine +
+                "=============================";
+            System.IO.File.WriteAllText("CierreCaja.txt", resumen);
+            MessageBox.Show("El resumen del día se ha guradado correctamente.");
+        }
     }
 }

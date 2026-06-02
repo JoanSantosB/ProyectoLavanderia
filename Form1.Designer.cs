@@ -347,6 +347,7 @@
             this.btnGuardarResumen.TabIndex = 5;
             this.btnGuardarResumen.Text = "Guardar Resumen";
             this.btnGuardarResumen.UseVisualStyleBackColor = true;
+            this.btnGuardarResumen.Click += new System.EventHandler(this.btnGuardarResumen_Click);
             // 
             // btnCierreCaja
             // 
@@ -356,6 +357,7 @@
             this.btnCierreCaja.TabIndex = 4;
             this.btnCierreCaja.Text = "Cierre de Caja";
             this.btnCierreCaja.UseVisualStyleBackColor = true;
+            this.btnCierreCaja.Click += new System.EventHandler(this.btnCierreCaja_Click);
             // 
             // lblDecuentosTitulo
             // 
