@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace ProyectoLavanderia
 {
     public partial class Form1 : Form
@@ -110,7 +110,7 @@ namespace ProyectoLavanderia
             }
             totalVentasDia+= total;
             totalDescunetosDia += descuento;
-            textRecibo.Text = "\t==Recibo de Lavandería==" + Environment.NewLine +
+            textRecibo.Text = "\n==Recibo de Lavandería==" + Environment.NewLine +
             "\nNúmero de Orden: " + numeroOrden + Environment.NewLine +
             "\nNombre: " + nombre + Environment.NewLine +
             "\nTeléfono: " + telefono + Environment.NewLine +
@@ -157,11 +157,12 @@ namespace ProyectoLavanderia
         }
         private void btnGuardarResumen_Click(object sender, EventArgs e)
         {
+            string ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "CierreCaja.txt");
             string resumen = "\t==Resumen del Día:"+Environment.NewLine+
                 "\nTotal vendido en el día: Q" + totalVentasDia.ToString("F2") + Environment.NewLine +
                 "\nTotal de descauntos en el día: Q" + totalDescunetosDia.ToString("F2") + Environment.NewLine +
                 "=============================";
-            System.IO.File.WriteAllText("CierreCaja.txt", resumen);
+            File.WriteAllText(ruta, resumen);
             MessageBox.Show("El resumen del día se ha guradado correctamente.");
         }
     }
